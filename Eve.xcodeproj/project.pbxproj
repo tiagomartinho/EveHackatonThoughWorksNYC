@@ -102,7 +102,6 @@
 		EA38FC8C1D7B2326000E925C /* Eve */ = {
 			isa = PBXGroup;
 			children = (
-				EA38FC8D1D7B2326000E925C /* AppDelegate.swift */,
 				EA38FC8F1D7B2326000E925C /* ViewController.swift */,
 				EA38FC911D7B2326000E925C /* Main.storyboard */,
 				EADA03381D7B275E00EAB79A /* Supporting Files */,
@@ -139,6 +138,7 @@
 		EADA03381D7B275E00EAB79A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA38FC8D1D7B2326000E925C /* AppDelegate.swift */,
 				EA38FCBB1D7B237C000E925C /* Eve.entitlements */,
 				EA38FC941D7B2326000E925C /* Assets.xcassets */,
 				EA38FC961D7B2326000E925C /* LaunchScreen.storyboard */,
