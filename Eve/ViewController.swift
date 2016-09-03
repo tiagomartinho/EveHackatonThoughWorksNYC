@@ -1,5 +1,6 @@
 import UIKit
 import HomeKit
+import Charts
 
 class ViewController: UIViewController, HMHomeManagerDelegate {
 
@@ -7,11 +8,11 @@ class ViewController: UIViewController, HMHomeManagerDelegate {
 
     var temperatureCharacteristic: HMCharacteristic?
 
-    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var lineChartView: LineChartView!
 
-    var temperature = 0.0 {
+    var temperatures = [Double]() {
         didSet {
-            temperatureLabel.text = "\(temperature)"
+            setChartData()
         }
     }
 
@@ -23,11 +24,35 @@ class ViewController: UIViewController, HMHomeManagerDelegate {
         homeManager?.delegate = self
     }
 
+    func setChartData() {
+        var xVals = [String]()
+        for i in 0 ..< temperatures.count {
+            xVals.append("\(i)")
+        }
+        var yVals1 = [ChartDataEntry]()
+        for i in 0 ..< temperatures.count {
+            yVals1.append(ChartDataEntry(value: temperatures[i], xIndex: i))
+        }
+        let set1 = LineChartDataSet(yVals: yVals1, label: "First Set")
+        set1.setCircleColor(UIColor.red) // our circle will be dark red
+        set1.lineWidth = 2.0
+        set1.circleRadius = 6.0 // the radius of the node circle
+        set1.fillAlpha = 65 / 255.0
+        set1.fillColor = UIColor.red
+        set1.highlightColor = UIColor.white
+        set1.drawCircleHoleEnabled = true
+        var dataSets = [LineChartDataSet]()
+        dataSets.append(set1)
+        let data = LineChartData(xVals: xVals, dataSets: dataSets)
+        data.setValueTextColor(UIColor.white)
+        lineChartView.data = data
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.temperatureCharacteristic?.readValue { _ in
-                self.temperature = self.temperatureCharacteristic?.value as? Double ?? 0.0
+                self.temperatures.append(self.temperatureCharacteristic?.value as? Double ?? 0.0)
             }
         }
     }

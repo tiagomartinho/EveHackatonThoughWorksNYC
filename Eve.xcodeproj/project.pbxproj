@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73935BA07D3BBF24FEA9556 /* Pods_Eve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0AFDCC4AFCB324B67620E /* Pods_Eve.framework */; };
 		EA38FC8E1D7B2326000E925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FC8D1D7B2326000E925C /* AppDelegate.swift */; };
 		EA38FC901D7B2326000E925C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FC8F1D7B2326000E925C /* ViewController.swift */; };
 		EA38FC951D7B2326000E925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA38FC941D7B2326000E925C /* Assets.xcassets */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94ECB258A3350834179F6213 /* Pods-Eve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eve/Pods-Eve.debug.xcconfig"; sourceTree = "<group>"; };
+		B5F9566FF67B65545FB18CF6 /* Pods-Eve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eve.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eve/Pods-Eve.release.xcconfig"; sourceTree = "<group>"; };
+		C3A0AFDCC4AFCB324B67620E /* Pods_Eve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA38FC8A1D7B2326000E925C /* Eve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA38FC8D1D7B2326000E925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA38FC8F1D7B2326000E925C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA38FCBE1D7B237C000E925C /* HomeKit.framework in Frameworks */,
+				A73935BA07D3BBF24FEA9556 /* Pods_Eve.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33232357D916E37B95BD8552 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94ECB258A3350834179F6213 /* Pods-Eve.debug.xcconfig */,
+				B5F9566FF67B65545FB18CF6 /* Pods-Eve.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EA38FC811D7B2326000E925C = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +100,7 @@
 				EA38FCAC1D7B2326000E925C /* EveUITests */,
 				EA38FC8B1D7B2326000E925C /* Products */,
 				EA38FCBC1D7B237C000E925C /* Frameworks */,
+				33232357D916E37B95BD8552 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				EA38FCBD1D7B237C000E925C /* HomeKit.framework */,
+				C3A0AFDCC4AFCB324B67620E /* Pods_Eve.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA38FCB21D7B2326000E925C /* Build configuration list for PBXNativeTarget "Eve" */;
 			buildPhases = (
+				025108A676BCD3041B40E1E9 /* 📦 Check Pods Manifest.lock */,
 				EA38FC861D7B2326000E925C /* Sources */,
 				EA38FC871D7B2326000E925C /* Frameworks */,
 				EA38FC881D7B2326000E925C /* Resources */,
+				B48501D41038C1D7B8883EC7 /* 📦 Embed Pods Frameworks */,
+				DE0494C836D46BE0ADDFDF23 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +318,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		025108A676BCD3041B40E1E9 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B48501D41038C1D7B8883EC7 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eve/Pods-Eve-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE0494C836D46BE0ADDFDF23 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eve/Pods-Eve-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA38FC861D7B2326000E925C /* Sources */ = {
@@ -448,6 +515,7 @@
 		};
 		EA38FCB31D7B2326000E925C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94ECB258A3350834179F6213 /* Pods-Eve.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eve/Eve.entitlements;
@@ -462,6 +530,7 @@
 		};
 		EA38FCB41D7B2326000E925C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F9566FF67B65545FB18CF6 /* Pods-Eve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eve/Eve.entitlements;
