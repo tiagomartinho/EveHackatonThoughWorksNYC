@@ -1,25 +1,29 @@
-//
-//  ViewController.swift
-//  Eve
-//
-//  Created by Tiago Martinho on 03/09/16.
-//  Copyright © 2016 tm. All rights reserved.
-//
-
 import UIKit
+import HomeKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, HMHomeManagerDelegate {
+
+    var homeManager: HMHomeManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        homeManager = HMHomeManager()
+        homeManager?.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
+        print("homeManagerDidUpdateHomes")
     }
 
+    func homeManagerDidUpdatePrimaryHome(_ manager: HMHomeManager) {
+        print("homeManagerDidUpdatePrimaryHome")
+    }
 
+    func homeManager(_ manager: HMHomeManager, didAdd home: HMHome) {
+        print("homeManagerdidAddhome")
+    }
+
+    func homeManager(_ manager: HMHomeManager, didRemove home: HMHome) {
+        print("homeManagerdidRemovehome")
+    }
 }
-
