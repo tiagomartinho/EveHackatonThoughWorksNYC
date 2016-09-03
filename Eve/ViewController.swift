@@ -36,7 +36,7 @@ class ViewController: UIViewController, HMHomeManagerDelegate {
         let set1 = LineChartDataSet(yVals: yVals1, label: "First Set")
         set1.setCircleColor(UIColor.red) // our circle will be dark red
         set1.lineWidth = 2.0
-        set1.circleRadius = 6.0 // the radius of the node circle
+        set1.circleRadius = 2.0 // the radius of the node circle
         set1.fillAlpha = 65 / 255.0
         set1.fillColor = UIColor.red
         set1.highlightColor = UIColor.white
@@ -52,6 +52,9 @@ class ViewController: UIViewController, HMHomeManagerDelegate {
         super.viewWillAppear(animated)
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.temperatureCharacteristic?.readValue { _ in
+                if self.temperatures.count > 20  {
+                    self.temperatures.removeFirst()
+                }
                 self.temperatures.append(self.temperatureCharacteristic?.value as? Double ?? 0.0)
             }
         }
