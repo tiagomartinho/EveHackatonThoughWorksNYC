@@ -14,6 +14,7 @@
 		EA38FC981D7B2326000E925C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA38FC961D7B2326000E925C /* LaunchScreen.storyboard */; };
 		EA38FCA31D7B2326000E925C /* EveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FCA21D7B2326000E925C /* EveTests.swift */; };
 		EA38FCAE1D7B2326000E925C /* EveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FCAD1D7B2326000E925C /* EveUITests.swift */; };
+		EA38FCBE1D7B237C000E925C /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA38FCBD1D7B237C000E925C /* HomeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		EA38FCA91D7B2326000E925C /* EveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA38FCAD1D7B2326000E925C /* EveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveUITests.swift; sourceTree = "<group>"; };
 		EA38FCAF1D7B2326000E925C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA38FCBB1D7B237C000E925C /* Eve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eve.entitlements; sourceTree = "<group>"; };
+		EA38FCBD1D7B237C000E925C /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA38FCBE1D7B237C000E925C /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 				EA38FCA11D7B2326000E925C /* EveTests */,
 				EA38FCAC1D7B2326000E925C /* EveUITests */,
 				EA38FC8B1D7B2326000E925C /* Products */,
+				EA38FCBC1D7B237C000E925C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +102,7 @@
 		EA38FC8C1D7B2326000E925C /* Eve */ = {
 			isa = PBXGroup;
 			children = (
+				EA38FCBB1D7B237C000E925C /* Eve.entitlements */,
 				EA38FC8D1D7B2326000E925C /* AppDelegate.swift */,
 				EA38FC8F1D7B2326000E925C /* ViewController.swift */,
 				EA38FC911D7B2326000E925C /* Main.storyboard */,
@@ -123,6 +129,14 @@
 				EA38FCAF1D7B2326000E925C /* Info.plist */,
 			);
 			path = EveUITests;
+			sourceTree = "<group>";
+		};
+		EA38FCBC1D7B237C000E925C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA38FCBD1D7B237C000E925C /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +209,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4C34FT6ABU;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 					EA38FC9D1D7B2326000E925C = {
 						CreatedOnToolsVersion = 8.0;
@@ -415,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eve/Eve.entitlements;
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
 				INFOPLIST_FILE = Eve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -428,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eve/Eve.entitlements;
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
 				INFOPLIST_FILE = Eve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
