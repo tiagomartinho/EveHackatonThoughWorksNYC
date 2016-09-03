@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		EA38FC8E1D7B2326000E925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FC8D1D7B2326000E925C /* AppDelegate.swift */; };
 		EA38FC901D7B2326000E925C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FC8F1D7B2326000E925C /* ViewController.swift */; };
-		EA38FC931D7B2326000E925C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA38FC911D7B2326000E925C /* Main.storyboard */; };
 		EA38FC951D7B2326000E925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA38FC941D7B2326000E925C /* Assets.xcassets */; };
 		EA38FC981D7B2326000E925C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA38FC961D7B2326000E925C /* LaunchScreen.storyboard */; };
 		EA38FCA31D7B2326000E925C /* EveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FCA21D7B2326000E925C /* EveTests.swift */; };
 		EA38FCAE1D7B2326000E925C /* EveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FCAD1D7B2326000E925C /* EveUITests.swift */; };
 		EA38FCBE1D7B237C000E925C /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA38FCBD1D7B237C000E925C /* HomeKit.framework */; };
+		EADA033C1D7B457000EAB79A /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADA033B1D7B457000EAB79A /* View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		EA38FC8A1D7B2326000E925C /* Eve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA38FC8D1D7B2326000E925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA38FC8F1D7B2326000E925C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EA38FC921D7B2326000E925C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA38FC941D7B2326000E925C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA38FC971D7B2326000E925C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA38FC991D7B2326000E925C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		EA38FCAF1D7B2326000E925C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA38FCBB1D7B237C000E925C /* Eve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eve.entitlements; sourceTree = "<group>"; };
 		EA38FCBD1D7B237C000E925C /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		EADA033B1D7B457000EAB79A /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +102,9 @@
 		EA38FC8C1D7B2326000E925C /* Eve */ = {
 			isa = PBXGroup;
 			children = (
+				EA38FC8D1D7B2326000E925C /* AppDelegate.swift */,
 				EA38FC8F1D7B2326000E925C /* ViewController.swift */,
-				EA38FC911D7B2326000E925C /* Main.storyboard */,
+				EADA033B1D7B457000EAB79A /* View.xib */,
 				EADA03381D7B275E00EAB79A /* Supporting Files */,
 			);
 			path = Eve;
@@ -138,7 +139,6 @@
 		EADA03381D7B275E00EAB79A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EA38FC8D1D7B2326000E925C /* AppDelegate.swift */,
 				EA38FCBB1D7B237C000E925C /* Eve.entitlements */,
 				EA38FC941D7B2326000E925C /* Assets.xcassets */,
 				EA38FC961D7B2326000E925C /* LaunchScreen.storyboard */,
@@ -279,8 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA38FC981D7B2326000E925C /* LaunchScreen.storyboard in Resources */,
+				EADA033C1D7B457000EAB79A /* View.xib in Resources */,
 				EA38FC951D7B2326000E925C /* Assets.xcassets in Resources */,
-				EA38FC931D7B2326000E925C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,14 +342,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EA38FC911D7B2326000E925C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA38FC921D7B2326000E925C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EA38FC961D7B2326000E925C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

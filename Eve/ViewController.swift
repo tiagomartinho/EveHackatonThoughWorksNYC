@@ -7,6 +7,14 @@ class ViewController: UIViewController, HMHomeManagerDelegate {
 
     var temperatureCharacteristic: HMCharacteristic?
 
+    @IBOutlet weak var temperatureLabel: UILabel!
+
+    var temperature = 0.0 {
+        didSet {
+            temperatureLabel.text = "\(temperature)"
+        }
+    }
+
     var timer: Timer?
 
     override func viewDidLoad() {
@@ -19,7 +27,7 @@ class ViewController: UIViewController, HMHomeManagerDelegate {
         super.viewWillAppear(animated)
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.temperatureCharacteristic?.readValue { _ in
-                print(self.temperatureCharacteristic?.value)
+                self.temperature = self.temperatureCharacteristic?.value as? Double ?? 0.0
             }
         }
     }
