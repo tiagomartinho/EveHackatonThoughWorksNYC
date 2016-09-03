@@ -102,13 +102,10 @@
 		EA38FC8C1D7B2326000E925C /* Eve */ = {
 			isa = PBXGroup;
 			children = (
-				EA38FCBB1D7B237C000E925C /* Eve.entitlements */,
 				EA38FC8D1D7B2326000E925C /* AppDelegate.swift */,
 				EA38FC8F1D7B2326000E925C /* ViewController.swift */,
 				EA38FC911D7B2326000E925C /* Main.storyboard */,
-				EA38FC941D7B2326000E925C /* Assets.xcassets */,
-				EA38FC961D7B2326000E925C /* LaunchScreen.storyboard */,
-				EA38FC991D7B2326000E925C /* Info.plist */,
+				EADA03381D7B275E00EAB79A /* Supporting Files */,
 			);
 			path = Eve;
 			sourceTree = "<group>";
@@ -117,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				EA38FCA21D7B2326000E925C /* EveTests.swift */,
-				EA38FCA41D7B2326000E925C /* Info.plist */,
+				EADA03391D7B278000EAB79A /* Supporting Files */,
 			);
 			path = EveTests;
 			sourceTree = "<group>";
@@ -126,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				EA38FCAD1D7B2326000E925C /* EveUITests.swift */,
-				EA38FCAF1D7B2326000E925C /* Info.plist */,
+				EADA033A1D7B278800EAB79A /* Supporting Files */,
 			);
 			path = EveUITests;
 			sourceTree = "<group>";
@@ -137,6 +134,33 @@
 				EA38FCBD1D7B237C000E925C /* HomeKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EADA03381D7B275E00EAB79A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA38FCBB1D7B237C000E925C /* Eve.entitlements */,
+				EA38FC941D7B2326000E925C /* Assets.xcassets */,
+				EA38FC961D7B2326000E925C /* LaunchScreen.storyboard */,
+				EA38FC991D7B2326000E925C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EADA03391D7B278000EAB79A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA38FCA41D7B2326000E925C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EADA033A1D7B278800EAB79A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA38FCAF1D7B2326000E925C /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,6 +559,7 @@
 				EA38FCB41D7B2326000E925C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA38FCB51D7B2326000E925C /* Build configuration list for PBXNativeTarget "EveTests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +568,7 @@
 				EA38FCB71D7B2326000E925C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA38FCB81D7B2326000E925C /* Build configuration list for PBXNativeTarget "EveUITests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +577,7 @@
 				EA38FCBA1D7B2326000E925C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
